@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=db;Database=MyDb;User=sa;Password=MyStr0ngP@ssword!;TrustServerCertificate=True"
+
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "MyStr0ngP@ssword!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1431:1433"

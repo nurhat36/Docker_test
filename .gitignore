@@ -1,0 +1,29 @@
+# .NET / C# build output
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+*.vscode/
+
+# Rider / IDE
+.idea/
+
+# Docker
+docker-compose.override.yml
+
+# User secrets
+secrets.json
+
+# Logs
+*.log
+
+# SQLite (varsa)
+*.db
+
+# VS Code
+.vscode/
+
+# Mac / Linux system files
+.DS_Store
+Thumbs.db
