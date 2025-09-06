@@ -10,7 +10,6 @@ services:
     environment:
       ConnectionStrings__DefaultConnection: "Server=db;Database=MyDb;User=sa;Password=MyStr0ngP@ssword!;TrustServerCertificate=True"
 
-
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
@@ -18,3 +17,8 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1431:1433"
+    volumes:
+      - db_data:/var/opt/mssql
+
+volumes:
+  db_data:
